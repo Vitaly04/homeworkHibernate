@@ -1,6 +1,7 @@
 package ru.netology.homeworkhibernate.Repository;
 
 import lombok.AllArgsConstructor;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
@@ -15,7 +16,7 @@ import java.util.stream.IntStream;
 @AllArgsConstructor
 public class LoaderPersons implements ApplicationRunner {
 
-    EntityManager entityManager;
+    PersonRepository personRepository;
 
     @Transactional
     @Override
@@ -35,7 +36,7 @@ public class LoaderPersons implements ApplicationRunner {
                             .phoneNumber(phoneNumbers.get(random.nextInt(phoneNumbers.size())))
                             .cityOfLiving(cityOfLiving.get(random.nextInt(cityOfLiving.size())))
                             .build();
-                    entityManager.persist(persons);
+                    personRepository.save(persons);
                 });
     }
 }

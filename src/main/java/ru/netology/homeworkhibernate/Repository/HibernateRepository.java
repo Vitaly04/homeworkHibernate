@@ -1,21 +1,28 @@
 package ru.netology.homeworkhibernate.Repository;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
 import ru.netology.homeworkhibernate.entity.Persons;
 
-import javax.persistence.EntityManager;
-import javax.persistence.PersistenceContext;
 import java.util.*;
 
 @Repository
 public class HibernateRepository {
 
-    @PersistenceContext
-    private EntityManager entityManager;
+
+    @Autowired
+    PersonRepository personRepository;
 
     public List getPersonsByCity(@RequestParam("city") String city) {
+        return personRepository.findByCityOfLiving(city);
+    }
 
-        return entityManager.createQuery("select p from Persons p where p.cityOfLiving = '" + city + "'", Persons.class).getResultList();
+    public List getPersonsByAge(@RequestParam("age") int age) {
+        return  personRepository.findByAgeIsLessThanOrderByAgeAsc(age);
+    }
+
+    public Optional<Persons> getPersonsByNameAndSurname(@RequestParam("name") String name, @RequestParam("surname") String surname) {
+        return personRepository.findByNameAndSurname(name, surname);
     }
 }

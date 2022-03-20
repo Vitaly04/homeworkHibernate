@@ -1,22 +1,21 @@
 package ru.netology.homeworkhibernate.entity;
 
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.EqualsAndHashCode;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
-import javax.persistence.IdClass;
 import java.io.Serializable;
 
-@Builder
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode
 @Entity
-@IdClass(PersonsPK.class)
-public class Persons implements Serializable {
-
+public class PersonsPK implements Serializable {
     @Id
     @Column(nullable = false)
     private String name;
@@ -26,8 +25,4 @@ public class Persons implements Serializable {
 
     @Id
     private int age;
-
-    private String phoneNumber;
-
-    private String cityOfLiving;
 }
