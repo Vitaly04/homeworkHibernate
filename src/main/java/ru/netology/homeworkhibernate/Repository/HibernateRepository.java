@@ -3,13 +3,11 @@ package ru.netology.homeworkhibernate.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.netology.homeworkhibernate.entity.Persons;
 
 import java.util.*;
 
 @Repository
 public class HibernateRepository {
-
 
     @Autowired
     PersonRepository personRepository;
@@ -22,7 +20,7 @@ public class HibernateRepository {
         return  personRepository.findByAgeIsLessThanOrderByAgeAsc(age);
     }
 
-    public Optional<Persons> getPersonsByNameAndSurname(@RequestParam("name") String name, @RequestParam("surname") String surname) {
+    public List getPersonsByNameAndSurname(@RequestParam("name") String name, @RequestParam("surname") String surname) {
         return personRepository.findByNameAndSurname(name, surname);
     }
 }
