@@ -1,4 +1,4 @@
-package ru.netology.homeworkhibernate.Repository;
+package ru.netology.homeworkhibernate.repository;
 
 import org.springframework.data.repository.CrudRepository;
 import ru.netology.homeworkhibernate.entity.Persons;

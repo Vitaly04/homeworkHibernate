@@ -1,14 +1,12 @@
-package ru.netology.homeworkhibernate.Repository;
+package ru.netology.homeworkhibernate.repository;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationArguments;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.stereotype.Component;
 import org.springframework.transaction.annotation.Transactional;
 import ru.netology.homeworkhibernate.entity.Persons;
 
-import javax.persistence.EntityManager;
 import java.util.Random;
 import java.util.stream.IntStream;
 

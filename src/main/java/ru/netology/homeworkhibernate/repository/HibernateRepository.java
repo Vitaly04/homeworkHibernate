@@ -1,4 +1,4 @@
-package ru.netology.homeworkhibernate.Repository;
+package ru.netology.homeworkhibernate.repository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;

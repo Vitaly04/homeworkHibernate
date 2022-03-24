@@ -1,7 +1,7 @@
-package ru.netology.homeworkhibernate.Service;
+package ru.netology.homeworkhibernate.service;
 
 import org.springframework.web.bind.annotation.RequestParam;
-import ru.netology.homeworkhibernate.Repository.HibernateRepository;
+import ru.netology.homeworkhibernate.repository.HibernateRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 

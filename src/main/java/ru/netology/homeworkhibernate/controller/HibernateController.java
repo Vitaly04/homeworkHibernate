@@ -1,7 +1,7 @@
 package ru.netology.homeworkhibernate.controller;
 
 import org.springframework.web.bind.annotation.*;
-import ru.netology.homeworkhibernate.Service.HibernateService;
+import ru.netology.homeworkhibernate.service.HibernateService;
 import lombok.AllArgsConstructor;
 import ru.netology.homeworkhibernate.entity.Persons;
 
